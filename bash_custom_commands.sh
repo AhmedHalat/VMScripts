@@ -31,7 +31,7 @@ function spotify_style(){
     echo "Wrong number of arguments. 1- Theme, 2- Color scheme"
     return;
   fi
-  YES | spicetify apply -y
+  YES | spicetify apply # Kind of unsafe, since it just applies through warnings
 
   echo Theme Applied
 }
