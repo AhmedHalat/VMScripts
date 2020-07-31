@@ -20,20 +20,15 @@ function forward () {
 # The themes must be installed first, check out spicetify community themes repo
 # can apply a theme or a color_scheme
 function spotify_style(){
-  echo "run"
   if [[ "$#" = 1 ]]; then
-    echo one
     spicetify config current_theme $1
   elif [[ "$#" = 2 ]]; then
-    echo two
     spicetify config current_theme $1 color_scheme $2
   else
     echo "Wrong number of arguments. 1- Theme, 2- Color scheme"
     return;
   fi
   YES | spicetify apply # Kind of unsafe, since it just applies through warnings
-
-  echo Theme Applied
 }
 
 
