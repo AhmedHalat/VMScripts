@@ -16,6 +16,26 @@ function forward () {
   ssh -R 8888:localhost:$1 root@testing.ahmedhalat.com
 }
 
+# Applies spotify themes using spicetify
+# The themes must be installed first, check out spicetify community themes repo
+# can apply a theme or a color_scheme
+function spotify_style(){
+  echo "run"
+  if [[ "$#" = 1 ]]; then
+    echo one
+    spicetify config current_theme $1
+  elif [[ "$#" = 2 ]]; then
+    echo two
+    spicetify config current_theme $1 color_scheme $2
+  else
+    echo "Wrong number of arguments. 1- Theme, 2- Color scheme"
+    return;
+  fi
+  YES | spicetify apply -y
+
+  echo Theme Applied
+}
+
 
 # kill processes running in local by name
 # $1, name of process to kill
