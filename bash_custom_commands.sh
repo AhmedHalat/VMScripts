@@ -13,7 +13,7 @@
 # Type in bash terminal "forward 8080" to forward port 8080 to testing.ahmedhalat.com
 # This vm is passworded protected and only enabled on use
 function forward () {
-  ssh -R 8888:localhost:$1 root@testing.ahmedhalat.com
+  ssh -R 8888:localhost:$1 root@XXXXXX.com
 }
 
 # Applies spotify themes using spicetify
